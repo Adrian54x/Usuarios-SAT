@@ -11,10 +11,10 @@ class Extranjero(Usuarios):
         return self.__Continente
     @Continente.setter
     def Continente(self,continente:str):
-        if len(continente) >= 4:
-            self.__Continente = continente
+        if continente not in ["America","Europa","Asia","Africa","Oceania","Antartida"]:
+            print("El continente ingresado no es valido")
         else:
-            print("Continente no valido")
+            self.__Continente = continente
 
 
     def mostrar_extranjero(self):
