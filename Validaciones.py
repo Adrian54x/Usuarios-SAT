@@ -1,4 +1,6 @@
+import re
 from datetime import datetime
+import Listas
 
 class Validacion:
 
@@ -20,9 +22,11 @@ class Validacion:
 
 
     def Nombre(self):
+        caractersValidos = r"^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)+ $"
         while True:
             nombre = input("Ingrese sus nombres:")
-            if nombre.startswith(" ") or len(nombre) < 7 or not nombre.replace(" ", "").isalpha():
+            val1 = not re.fullmatch(caractersValidos, nombre)
+            if nombre.startswith(" ") or val1  or len(nombre) < 7 :
                 print("Nombres no validos!")
             else:
                 return nombre
@@ -54,6 +58,17 @@ class Validacion:
             except:
                 print("Fecha no valida!")
 
-# Genero, Categoria, Tipo, Discapacidad,TipoVehiculo, Idioma, Nacionalidad
+    def Genero(self):
+        genero = Listas.LGenero().Extraer()
+        while True:
+            opcion = self.ValInt("Elija el genero(1.Hombre / 2.Mujer):", "Opcion no valida")
+            if opcion == 1:
+                return genero[0]
+            elif opcion == 2:
+                return genero[1]
+            else:
+                print("Genero no valido!")
+
+# Categoria, Tipo, Discapacidad,TipoVehiculo, Idioma, Naconalidad
 x = Validacion()
-a = x.FechaNacimiento()
+a = x.Nombre()
