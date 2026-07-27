@@ -17,3 +17,11 @@ class Idiomas:
         else:
             self.__Idioma = idioma
 
+    def mostrar_persona(self):
+        print("No. de dpi: ", self.Dpi)
+        print("Nombres: ", self.Nombres)
+        print("Apellidos: ", self.Apellidos)
+        print("Fecha de nacimiento: ", self.FechaDeNacimiento)
+        print("Genero: ", self.Genero)
+        print("Idioma que habla la persona: ", self.Idioma)
+
