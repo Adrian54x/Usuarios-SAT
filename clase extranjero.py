@@ -36,7 +36,3 @@ class Extranjero(Usuarios):
         print("Genero: ", self.Genero)
         print("Pais de origen:", self.Pais)
         print("Continente: ",self.Continente)
-
-gringo = Extranjero(2136548970601,"James Harold","McCormik shnider",datetime(1995,6,12),"Hombre","Irlanda","Europa")
-
-gringo.mostrar_extranjero()

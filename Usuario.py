@@ -38,7 +38,7 @@ class Usuarios:
 
     @Nombres.setter
     def Nombres(self, nombres: str):
-        if nombres[0] != " " and len(nombres) >= 7:
+        if len(nombres) >= 7 and nombres.replace(" ", "").isalpha() and not nombres.startswith(" "):
             self.__Nombres = nombres
         else:
             print("Nombres no validos!")
