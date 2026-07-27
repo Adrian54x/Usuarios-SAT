@@ -1,7 +1,7 @@
 from Usuario import Usuarios
 from datetime import datetime
 
-class Idiomas:
+class Idiomas(Usuarios):
     def __init__(self,dpi: int, nombres: str, apellidos: str, fechaDeNacimiento: datetime, genero: str, idioma: str):
         self.Idioma = idioma
         super().__init__ (self,dpi, nombres, apellidos, fechaDeNacimiento, genero)
