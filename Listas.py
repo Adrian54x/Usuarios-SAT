@@ -1,5 +1,5 @@
 class Listas:
-    def __init__(self, lista):
+    def __init__(self, lista : list):
         if(lista == []):
             self.__Lista = []
         else:
