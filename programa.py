@@ -9,7 +9,7 @@ while True:
         opcion = validacion.ValInt("Elija una opcion", "Opcion invalida!")
         match opcion:
             case 1:
-                print("Ha ocurrido un error")
+                print("=== Usuario ===")
             case _:
                 print("Opcion no existente")
     except:
