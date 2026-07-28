@@ -1,13 +1,20 @@
 from Validaciones import Validacion
 from Persona import Persona
 from Menus import Menus
+from Colas import Cola
 import time
 
 menu = Menus()
 validacion = Validacion()
+colaOP1 = Cola()
+colaOP2 = Cola()
+colaOP3 = Cola()
+colaOP4 = Cola()
+colaOP5 = Cola()
+colaEspecial = Cola()
 
 while True:
-    try:
+    #try:
         print("\n====================================================================================")
         menu.principal()
         opcion = validacion.ValInt("Elija una opcion:", "Opcion invalida!")
@@ -54,7 +61,15 @@ while True:
                                     prioridad = "si"
                                 else:
                                     prioridad = "no"
-                                persona = Persona(dpi, nombres, apellidos, fechaDeNacimiento,genero,categoria,tipo,prioridad)
+                                persona = Persona(dpi, nombres, apellidos, fechaDeNacimiento, genero, categoria, tipo, prioridad)
+                                if prioridad == "no":
+                                    colaOP1.Push(persona)
+                                else:
+                                    colaEspecial.Push(persona)
+                                print("\nUsuario Agregado a la cola!")
+
+                            case 2:
+                                print()
 
                             case _:
                                 print("Opcion no existente!")
@@ -62,5 +77,5 @@ while True:
             case _:
                 print("\n====================================================================================")
                 print("Opcion no existente")
-    except:
-        print("Ha ocurrido un error")
+    #except:
+        #print("Ha ocurrido un error")
