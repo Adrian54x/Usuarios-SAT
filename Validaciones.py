@@ -1,6 +1,7 @@
 import re
 from datetime import datetime
 import Listas
+from Colas import Cola
 
 
 class Validacion:
@@ -192,3 +193,54 @@ class Validacion:
                 return categoria[opcion - 1]
             else:
                 print("Categoria no valida!")
+
+    def MenuEmpeado(self, opcion, Cola, Pila):
+        match opcion:
+            case 1:
+                atendido = Cola.pop()
+                if atendido:
+                    Pila.push(atendido)
+                    print(f"Se ha atendido con éxito!")
+                else:
+                    print("No hay nadie en la cola para atender.")
+
+            case 2:
+                print("\n== Personas en espera ==")
+                Cola.mostrar()
+
+            case 3:
+                print("\n== Historial ==")
+                Pila.mostrar()
+
+            case 4:
+                dpi = input("Ingrese el DPI de la persona a eliminar de la cola: ")
+                if Cola.eliminar(dpi):
+                    print("Persona eliminada correctamente de la cola.")
+                else:
+                    print("No se encontró a nadie con ese DPI en la cola.")
+
+            case 5:
+                dpi = input("Ingrese el DPI de la persona a modificar en la cola: ")
+                persona = Cola.buscar(dpi)
+                if persona:
+                    nombre = input("Ingrese el nuevo nombre: ")
+                    persona.Nombre = nombre
+                    print("Datos actualizados correctame")
+                else:
+                    print("Persona no encontrada en la fila")
+
+            case 6:
+                print(f"Cantidad en espera: {Cola.cantidad()}")
+
+            case 7:
+                print(f"Cantidad en historial: {Pila.cantidad()}")
+            case 8:
+                dpi = input("Ingrese el DPI a buscar en el historial: ")
+                persona = Pila.buscar_persona(dpi)
+                if persona:
+                    print("\nPersona encontrada")
+                    persona.Mostrar()
+                else:
+                    print("No se encontró esa persona en el historial.")
+            case _:
+                print("Opcion no valida!")

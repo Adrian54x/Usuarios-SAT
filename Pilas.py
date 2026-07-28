@@ -1,10 +1,23 @@
 class Pilas:
-    def __init__(self, pila : list):
-        self.__Pila = pila
+    def __init__(self):
+        self.__pila = []
 
-    def Push(self, agregar):
-        self.__Pila.append(agregar)
+    def push(self, cliente):
+        self.__pila.append(cliente)
 
-    def Mostrar(self):
-        for n, c in enumerate(self.__Pila, start=1):
+    def mostrar(self):
+        if not self.__pila:
+            print("El historial está vacío.")
+            return
+        for n, c in enumerate(reversed(self.__pila), start=1):
+            print(f"--- Atendido #{n} ---")
             c.Mostrar()
+
+    def cantidad(self):
+        return len(self.__pila)
+
+    def buscar_persona(self, dpi):
+        for p in self.__pila:
+            if p.Dpi == dpi:
+                return p
+        return None

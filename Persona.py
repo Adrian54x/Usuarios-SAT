@@ -18,3 +18,13 @@ class Persona(Usuarios, Tramites):
             self.__pioridad = tipo
         else:
             print("Tipo no valido!")
+
+    def Mostrar(self):
+        print("No. de dpi: ", self.Dpi)
+        print("Nombres: ", self.Nombres)
+        print("Apellidos: ", self.Apellidos)
+        print("Fecha de nacimiento: ", self.FechaDeNacimiento)
+        print("Genero: ", self.Genero)
+        print("Categoria:",self.Categorias)
+        print("Tipo:", self.Tipos)
+        print("Idioma:", self.Pioridad)

@@ -3,6 +3,7 @@ from Validaciones import Validacion
 from Persona import Persona
 from Menus import Menus
 from Colas import Cola
+from Pilas import Pilas
 from extranjero import Extranjero
 from vehiculo import Vehiculos
 import time
@@ -14,10 +15,16 @@ colaOP2 = Cola()
 colaOP3 = Cola()
 colaOP4 = Cola()
 colaOP5 = Cola()
+
+pilaOP1 = Pilas()
+pilaOP2 = Pilas()
+pilaOP3 = Pilas()
+pilaOP4 = Pilas()
+pilaOP5 = Pilas()
 colaEspecial = Cola()
 
 while True:
-    try:
+    #try:
         print("\n====================================================================================")
         menu.principal()
         opcion = validacion.ValInt("Elija una opcion:", "Opcion invalida!")
@@ -153,8 +160,26 @@ while True:
                 match submenu:
                     case 1:
                         menu.empleados()
+                        subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                        validacion.MenuEmpeado(subOpcion,colaOP1, pilaOP1)
+                    case 2:
+                        menu.empleados()
+                        subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                        validacion.MenuEmpeado(subOpcion,colaOP2, pilaOP2)
+                    case 3:
+                        menu.empleados()
+                        subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                        validacion.MenuEmpeado(subOpcion,colaOP3, pilaOP3)
+                    case 4:
+                        menu.empleados()
+                        subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                        validacion.MenuEmpeado(subOpcion,colaOP4, pilaOP4)
+                    case 5:
+                        menu.empleados()
+                        subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                        validacion.MenuEmpeado(subOpcion, colaOP5, pilaOP5)
             case _:
                 print("\n====================================================================================")
                 print("Opcion no existente")
-    except:
-        print("Ha ocurrido un error")
+    #except:
+        #print("Ha ocurrido un error")

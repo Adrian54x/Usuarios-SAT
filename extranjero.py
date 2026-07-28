@@ -34,11 +34,14 @@ class Extranjero(Usuarios, Tramites, Idiomas):
             self.__Continente = continente
 
 
-    def mostrar_extranjero(self):
+    def Mostrar(self):
         print("No. de dpi: ", self.Dpi)
         print("Nombres: ", self.Nombres)
         print("Apellidos: ", self.Apellidos)
         print("Fecha de nacimiento: ", self.FechaDeNacimiento)
         print("Genero: ", self.Genero)
+        print("Categoria:",self.Categorias)
+        print("Tipo:", self.Tipos)
+        print("Idioma:", self.Idioma)
         print("Pais de origen:", self.Pais)
         print("Continente: ",self.Continente)
