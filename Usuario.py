@@ -1,5 +1,6 @@
 from datetime import datetime
 import Listas
+import re
 
 class Usuarios:
     def __init__(self, dpi: int, nombres: str, apellidos: str, fechaDeNacimiento: datetime, genero: str):
@@ -38,14 +39,18 @@ class Usuarios:
 
     @Nombres.setter
     def Nombres(self, nombres: str):
-        if len(nombres) >= 7 and nombres.replace(" ", "").isalpha() and not nombres.startswith(" "):
+        caractersValidos = r"^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)+$"
+        val1 = re.fullmatch(caractersValidos, nombres)
+        if not nombres.startswith(" ") and val1 and len(nombres) < 7:
             self.__Nombres = nombres
         else:
             print("Nombres no validos!")
 
     @Apellidos.setter
     def Apellidos(self, apellidos: str):
-        if apellidos[0] != " " and len(apellidos) >= 7 :
+        caractersValidos = r"^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)+$"
+        val1 = re.fullmatch(caractersValidos, apellidos)
+        if apellidos.startswith(" ") and val1 and len(apellidos) < 7:
             self.__Apellidos = apellidos
         else:
             print("Apellidos no validos!")
