@@ -81,6 +81,29 @@ class Validacion:
             else:
                 print("Genero no valido!")
 
-# Categoria, Tipo, Discapacidad,TipoVehiculo, Idioma, Naconalidad
-#x = Validacion()
-#a = x.Apellido()
+    def Categoria(self):
+        Listas.LCategoria().Mostar()
+        categorias = Listas.LCategoria().Extraer()
+        while True:
+            opcion = self.ValInt("Elija una categoria:", "Categoria no valida!")
+            if(opcion > 0 and opcion <= len(categorias)):
+                return categorias[opcion - 1]
+            else:
+                print("Categoria no valida!")
+
+    def Tipos(self, opcion : int):
+        if opcion == 1:
+            Listas.LCategoriaOP1().Mostar()
+            tipo = Listas.LCategoriaOP1().Extraer()
+        else:
+            print("Tipo no valido!")
+        while True:
+            opcion = self.ValInt("Elija un tipo:", "Tipo no valida!")
+            if (opcion > 0 and opcion <= len(tipo)):
+                return tipo[opcion - 1]
+            else:
+                print("Tipo no valida!")
+
+# Discapacidad,TipoVehiculo, Idioma, Naconalidad
+x = Validacion()
+a = x.Tipos(1)
