@@ -149,6 +149,10 @@ while True:
             case 2:
                 print("\n====================================================================================")
                 menu.recepcion()
+                submenu = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                match submenu:
+                    case 1:
+                        menu.empleados()
             case _:
                 print("\n====================================================================================")
                 print("Opcion no existente")
