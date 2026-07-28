@@ -195,6 +195,7 @@ class Validacion:
                 print("Categoria no valida!")
 
     def MenuEmpeado(self, opcion, Cola, Pila):
+        print("\n====================================================================================")
         match opcion:
             case 1:
                 atendido = Cola.pop()
