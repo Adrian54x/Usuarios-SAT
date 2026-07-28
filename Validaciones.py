@@ -66,7 +66,7 @@ class Validacion:
                 if years < 18 or years > 110 or not datetime.strptime(fecha.strip(), "%d/%m/%Y"):
                     print("Fecha incorrecta!")
                 else:
-                    return fecha
+                    return datetime.strptime(fecha.strip(), "%d/%m/%Y")
             except:
                 print("Fecha no valida!")
 
@@ -105,5 +105,5 @@ class Validacion:
                 print("Tipo no valida!")
 
 # Discapacidad,TipoVehiculo, Idioma, Naconalidad
-x = Validacion()
-a = x.Tipos(1)
+#x = Validacion()
+#a = x.Tipos(1)
