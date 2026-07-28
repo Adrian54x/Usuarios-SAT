@@ -1,8 +1,12 @@
 from Usuario import Usuarios
+from Tramite import Tramites
+from idiomas import Idiomas
 from datetime import datetime
-class Extranjero(Usuarios):
-    def __init__(self,dpi:int, nombres:str, apellidos:str, fechaDeNacimiento:datetime , genero:str,pais:str, continente:str):
-        super().__init__(dpi, nombres, apellidos,fechaDeNacimiento, genero)
+
+class Extranjero(Usuarios, Tramites, Idiomas):
+    def __init__(self,dpi:int, nombres:str, apellidos:str, fechaDeNacimiento:datetime , genero:str,  categoria : str, tipo : str, idioma: str, pais:str, continente:str):
+        super().__init__(dpi = dpi, nombres = nombres, apellidos = apellidos, fechaDeNacimiento = fechaDeNacimiento,
+                         genero = genero, categoria = categoria, tipo = tipo, idioma = idioma)
         self.Pais = pais
         self.Continente = continente
 
