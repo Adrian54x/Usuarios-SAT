@@ -10,7 +10,7 @@ class Pilas:
             print("El historial está vacío.")
             return
         for n, c in enumerate(reversed(self.__pila), start=1):
-            print(f"--- Atendido #{n} ---")
+            print(f"{n}.")
             c.Mostrar()
 
     def cantidad(self):
