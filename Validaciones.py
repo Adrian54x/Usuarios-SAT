@@ -2,6 +2,7 @@ import re
 from datetime import datetime
 import Listas
 
+
 class Validacion:
 
     def  ValInt(self, texto : str, error : str):
@@ -86,24 +87,108 @@ class Validacion:
         categorias = Listas.LCategoria().Extraer()
         while True:
             opcion = self.ValInt("Elija una categoria:", "Categoria no valida!")
-            if(opcion > 0 and opcion <= len(categorias)):
+            if opcion > 0 and opcion <= len(categorias):
                 return categorias[opcion - 1]
             else:
                 print("Categoria no valida!")
 
     def Tipos(self, opcion : int):
         if opcion == 1:
-            Listas.LCategoriaOP1().Mostar()
-            tipo = Listas.LCategoriaOP1().Extraer()
+            Listas.LTipoOP1().Mostar()
+            tipo = Listas.LTipoOP1().Extraer()
+        elif opcion == 2:
+            Listas.LTipoOP2().Mostar()
+            tipo = Listas.LTipoOP2().Extraer()
+        elif opcion == 3:
+            Listas.LTipoOP3().Mostar()
+            tipo = Listas.LTipoOP3().Extraer()
+        elif opcion == 4:
+            Listas.LTipoOP4().Mostar()
+            tipo = Listas.LTipoOP4().Extraer()
+        elif opcion == 5:
+            Listas.LTipoOP5().Mostar()
+            tipo = Listas.LTipoOP4().Extraer()
         else:
             print("Tipo no valido!")
         while True:
             opcion = self.ValInt("Elija un tipo:", "Tipo no valida!")
-            if (opcion > 0 and opcion <= len(tipo)):
+            if opcion > 0 and opcion <= len(tipo):
                 return tipo[opcion - 1]
             else:
                 print("Tipo no valida!")
 
-# Discapacidad,TipoVehiculo, Idioma, Naconalidad
-#x = Validacion()
-#a = x.Tipos(1)
+    def CategoriaVehiculo(self):
+        Listas.LCategoriaV().Mostar()
+        categoria = Listas.LCategoriaV().Extraer()
+        while True:
+            opcion = self.ValInt("Elija un categoria:", "Categoria no valida!")
+            if opcion > 0 and opcion <= len(categoria):
+                return categoria[opcion - 1]
+            else:
+                print("Categoria no valida!")
+
+    def TipoVehiculo(self):
+        Listas.LTipoV().Mostar()
+        categoria = Listas.LTipoV().Extraer()
+        while True:
+            opcion = self.ValInt("Elija un tipo:", "Tipo no valida!")
+            if opcion > 0 and opcion <= len(categoria):
+                return categoria[opcion - 1]
+            else:
+                print("Tipo no valida!")
+
+    def CategoriaOP3(self):
+        Listas.LCategoriaOP3().Mostar()
+        categoria = Listas.LCategoriaOP3().Extraer()
+        while True:
+            opcion = self.ValInt("Elija una categoria:", "Categoria no valida!")
+            if opcion > 0 and opcion <= len(categoria):
+                return categoria[opcion - 1]
+            else:
+                print("Categoria no valida!")
+
+    def CategoriaOP4(self):
+        Listas.LTipoOP4().Mostar()
+        categoria = Listas.LTipoOP4().Extraer()
+        while True:
+            opcion = self.ValInt("Elija una categoria:", "Categoria no valida!")
+            if opcion > 0 and opcion <= len(categoria):
+                return categoria[opcion - 1]
+            else:
+                print("Categoria no valida!")
+
+    def CategoriaOP5(self):
+        Listas.LTipoOP5().Mostar()
+        categoria = Listas.LTipoOP5().Extraer()
+        while True:
+            opcion = self.ValInt("Elija una categoria:", "Categoria no valida!")
+            if opcion > 0 and opcion <= len(categoria):
+                return categoria[opcion - 1]
+            else:
+                print("Categoria no valida!")
+
+    def Idioma(self):
+        while True:
+            idioma = input("Ingrese el nombre del Idioma: ")
+            if len(idioma) < 4 and idioma.isdigit():
+                print("Idioma no valio!")
+            else:
+                return idioma
+
+    def Pais(self):
+        while True:
+            pais = input("Ingrese el nombre del Pais: ")
+            if(len(pais) < 3 and pais.isdigit()):
+                print("Pais no valida!")
+            else:
+                return pais
+
+    def Continente(self):
+        Listas.LContiente().Mostar()
+        categoria = Listas.LContiente().Extraer()
+        while True:
+            opcion = self.ValInt("Elija un categoria:", "Categoria no valida!")
+            if opcion > 0 and opcion <= len(categoria):
+                return categoria[opcion - 1]
+            else:
+                print("Categoria no valida!")

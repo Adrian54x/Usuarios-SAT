@@ -11,7 +11,7 @@ class Tramites:
 
     @Categorias.setter
     def Categorias(self, Categorias):
-        if Categorias in Listas.LCategoria().Extraer():
+        if Categorias in Listas.LCategoria().Extraer() or Categorias in Listas.LCategoriaOP3().Extraer():
             self.__categorias = Categorias
 
     @property
@@ -20,4 +20,12 @@ class Tramites:
 
     @Tipos.setter
     def Tipos(self, Tipos):
-        self.__tipos = Tipos
+        val1 = Listas.LTipoV().Extraer()
+        val2 = Listas.LTipoOP1().Extraer()
+        val3 = Listas.LTipoOP2().Extraer()
+        val4 = Listas.LTipoOP4().Extraer()
+        val5 = Listas.LTipoOP5().Extraer()
+        if Tipos in val1 or Tipos in val2  or Tipos in val3 or Tipos in val4 or Tipos in val5:
+            self.__tipos = Tipos
+        else:
+            print("Tipo no valido")

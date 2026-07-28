@@ -2,12 +2,13 @@ from Usuario import Usuarios
 from Tramite import Tramites
 from idiomas import Idiomas
 from datetime import datetime
+import Listas
 
 class Extranjero(Usuarios, Tramites, Idiomas):
     def __init__(self,dpi:int, nombres:str, apellidos:str, fechaDeNacimiento:datetime , genero:str, categoria : str, tipo : str, idioma: str, pais:str, continente:str):
         Usuarios.__init__(self,dpi, nombres, apellidos, fechaDeNacimiento, genero)
         Tramites.__init__(self, categoria, tipo)
-        Idiomas.__init__(self,dpi, nombres, apellidos, fechaDeNacimiento, genero, categoria, tipo ,idioma)
+        Idiomas.__init__(self,idioma)
         self.Pais = pais
         self.Continente = continente
 
@@ -27,7 +28,7 @@ class Extranjero(Usuarios, Tramites, Idiomas):
         return self.__Continente
     @Continente.setter
     def Continente(self,continente:str):
-        if continente not in ["America","Europa","Asia","Africa","Oceania","Antartida"]:
+        if continente not in Listas.LContiente().Extraer():
             print("El continente ingresado no es valido")
         else:
             self.__Continente = continente

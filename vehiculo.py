@@ -1,32 +1,33 @@
 from Usuario import Usuarios
 from Tramite import Tramites
+import Listas
 from datetime import datetime
 
 class Vehiculos(Usuarios, Tramites):
-    def __init__(self,dpi: int, nombres: str, apellidos: str, fechaDeNacimiento: datetime, genero:str, categoria : str, tipo : str, categorias : str, tipos : str):
+    def __init__(self,dpi: int, nombres: str, apellidos: str, fechaDeNacimiento: datetime, genero:str, categoria : str, tipo : str, categoriaV : str, tipoV: str):
         Usuarios.__init__(self, dpi, nombres, apellidos, fechaDeNacimiento, genero)
         Tramites.__init__(self, categoria, tipo)
-        self.Categorias = categorias
-        self.Tipos = tipos
+        self.CategoriasV = categoriaV
+        self.TiposV = tipoV
 
     @property
-    def Categorias(self):
+    def CategoriaV(self):
         return self.__categorias
 
-    @Categorias.setter
-    def Categorias(self,categoria):
-        if categoria not in ["Terrestre","Aereo","Acuatico"]:
+    @CategoriaV.setter
+    def CategoriaV(self,categoria):
+        if categoria not in Listas.LCategoriaV().Extraer():
             print("Error, no se ha ingresado una categoria valida")
         else:
             self.__categorias = categoria
 
     @property
-    def Tipos(self):
+    def TipoV(self):
         return self.__tipos
 
-    @Tipos.setter
-    def Tipos(self,tipo):
-        if tipo not in ["Particular","Comercial","Alquiler","Urbano","Diplomatico","Oficial","Motocicleta"]:
+    @TipoV.setter
+    def TipoV(self,tipo):
+        if tipo not in Listas.LTipoV().Extraer():
             print("Error, no se ha ingresado un tipo valido de vehiculo")
         else:
             self.__tipos = tipo
