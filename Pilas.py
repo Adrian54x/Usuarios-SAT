@@ -16,7 +16,7 @@ class Pilas:
     def cantidad(self):
         return len(self.__pila)
 
-    def buscar_persona(self, dpi):
+    def buscar(self, dpi):
         for p in self.__pila:
             if int(p.Dpi) == int(dpi):
                 return p

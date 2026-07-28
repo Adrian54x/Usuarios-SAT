@@ -237,7 +237,7 @@ class Validacion:
                 print(f"Cantidad en historial: {Pila.cantidad()}")
             case 8:
                 dpi = input("Ingrese el DPI a buscar en el historial: ")
-                persona = Pila.buscar_persona(dpi)
+                persona = Pila.buscar(dpi)
                 if persona:
                     print("\nPersona encontrada")
                     persona.Mostrar()
