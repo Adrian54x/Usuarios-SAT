@@ -16,4 +16,7 @@ class Persona(Usuarios, Tramites):
 
     @Pioridad.setter
     def Pioridad(self,tipo: str):
-        self.__pioridad = tipo
+        if(tipo.lower() == "si" or tipo.lower() == "no"):
+            self.__pioridad = tipo
+        else:
+            print("Tipo no valido!")
