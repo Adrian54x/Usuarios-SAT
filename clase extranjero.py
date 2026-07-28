@@ -4,9 +4,10 @@ from idiomas import Idiomas
 from datetime import datetime
 
 class Extranjero(Usuarios, Tramites, Idiomas):
-    def __init__(self,dpi:int, nombres:str, apellidos:str, fechaDeNacimiento:datetime , genero:str,  categoria : str, tipo : str, idioma: str, pais:str, continente:str):
-        super().__init__(dpi = dpi, nombres = nombres, apellidos = apellidos, fechaDeNacimiento = fechaDeNacimiento,
-                         genero = genero, categoria = categoria, tipo = tipo, idioma = idioma)
+    def __init__(self,dpi:int, nombres:str, apellidos:str, fechaDeNacimiento:datetime , genero:str, categoria : str, tipo : str, idioma: str, pais:str, continente:str):
+        Usuarios.__init__(self,dpi, nombres, apellidos, fechaDeNacimiento, genero)
+        Tramites.__init__(self, categoria, tipo)
+        Idiomas.__init__(self,dpi, nombres, apellidos, fechaDeNacimiento, genero, categoria, tipo ,idioma)
         self.Pais = pais
         self.Continente = continente
 

@@ -1,9 +1,11 @@
 from Usuario import Usuarios
+from Tramite import Tramites
 from datetime import datetime
 
-class Idiomas(Usuarios):
-    def __init__(self,dpi: int, nombres: str, apellidos: str, fechaDeNacimiento: datetime, genero:str, idioma: str):
-        super().__init__(self, dpi, nombres, apellidos, fechaDeNacimiento, genero)
+class Idiomas(Usuarios, Tramites):
+    def __init__(self,dpi: int, nombres: str, apellidos: str, fechaDeNacimiento: datetime, genero:str,categoria : str, tipo : str, idioma: str):
+        Usuarios.__init__(self, dpi, nombres, apellidos, fechaDeNacimiento, genero)
+        Tramites.__init__(self, categoria, tipo)
         self.Idioma = idioma
 
     @property
