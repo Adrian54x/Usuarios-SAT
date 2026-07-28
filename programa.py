@@ -33,6 +33,7 @@ while True:
                     if(subOpcion not in [1,2,3,4,5]):
                         print("Opcion invalida")
                     else:
+                        print("\n====================================================================================")
                         print("=== Usuario ===")
                         dpi = validacion.Dpi()
                         nombres = validacion.Nombre()
@@ -40,12 +41,21 @@ while True:
                         fechaDeNacimiento = validacion.FechaNacimiento()
                         genero = validacion.Genero()
                         valExtranjero = validacion.SiNo("Es extranjero(SI / NO):")
-                        valIdiomas = validacion.SiNo("Habla otro idioma(SI /NO):")
+
 
                         match subOpcion:
                             case 1:
-                                persona = Persona(dpi, nombres, apellidos, fechaDeNacimiento,
-                                                  genero,)
+                                print("Categorias:")
+                                categoria = validacion.Categoria()
+                                print("Tipo:")
+                                tipo = validacion.Tipos(subOpcion)
+                                prioridad = validacion.SiNo("Es prioridad(SI / NO):")
+                                if prioridad:
+                                    prioridad = "si"
+                                else:
+                                    prioridad = "no"
+                                persona = Persona(dpi, nombres, apellidos, fechaDeNacimiento,genero,categoria,tipo,prioridad)
+
                             case _:
                                 print("Opcion no existente!")
 
