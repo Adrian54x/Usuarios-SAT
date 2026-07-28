@@ -12,6 +12,15 @@ class Menus:
             print("5. Recepción de expedientes y ventanilla preferencial")
             print("0. Regresar")
 
+        def principalEmpleado(self):
+            print("1. Registro Tributario Unificado (RTU) y NIT")
+            print("2. Registro Fiscal de Vehículos (RFV)")
+            print("3. Convenios de pago, multas e impugnaciones (Recaudacion)")
+            print("4. Orientación, agencia virtual y FEL")
+            print("5. Recepción de expedientes y ventanilla preferencial")
+            print("6. Prioridad")
+            print("0. Regresar")
+
         def empleados(self):
             print("1. Atender cliente")
             print("2. Ver cola")
