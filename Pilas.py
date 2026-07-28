@@ -18,6 +18,6 @@ class Pilas:
 
     def buscar_persona(self, dpi):
         for p in self.__pila:
-            if p.Dpi == dpi:
+            if int(p.Dpi) == int(dpi):
                 return p
         return None

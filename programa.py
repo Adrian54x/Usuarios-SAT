@@ -163,32 +163,32 @@ while True:
                         case 1:
                             print("\n====================================================================================")
                             menu.empleados()
-                            subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                            subOpcion = validacion.ValInt("Elija una opcion:", "Opcion no existente")
                             validacion.MenuEmpeado(subOpcion,colaOP1, pilaOP1)
                         case 2:
                             print("\n====================================================================================")
                             menu.empleados()
-                            subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                            subOpcion = validacion.ValInt("Elija una opcion:", "Opcion no existente")
                             validacion.MenuEmpeado(subOpcion,colaOP2, pilaOP2)
                         case 3:
                             print("\n====================================================================================")
                             menu.empleados()
-                            subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                            subOpcion = validacion.ValInt("Elija una opcion:", "Opcion no existente")
                             validacion.MenuEmpeado(subOpcion,colaOP3, pilaOP3)
                         case 4:
                             print("\n====================================================================================")
                             menu.empleados()
-                            subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                            subOpcion = validacion.ValInt("Elija una opcion:", "Opcion no existente")
                             validacion.MenuEmpeado(subOpcion,colaOP4, pilaOP4)
                         case 5:
                             print("\n====================================================================================")
                             menu.empleados()
-                            subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                            subOpcion = validacion.ValInt("Elija una opcion:", "Opcion no existente")
                             validacion.MenuEmpeado(subOpcion, colaOP5, pilaOP5)
                         case 6:
                             print("\n====================================================================================")
                             menu.empleados()
-                            subOpcion = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                            subOpcion = validacion.ValInt("Elija una opcion:", "Opcion no existente")
                             validacion.MenuEmpeado(subOpcion,colaEspecial,pilaEspecial)
             case _:
                 print("\n====================================================================================")
