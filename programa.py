@@ -126,6 +126,7 @@ while True:
                                 categoria = validacion.CategoriaOP4()
                                 print("Tipo:")
                                 tipo = validacion.Tipos(subOpcion)
+                                prioridad = validacion.SiNo("Es prioridad(SI / NO):")
                                 if prioridad:
                                     prioridad = "si"
                                 else:
