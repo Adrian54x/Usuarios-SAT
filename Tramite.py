@@ -1,3 +1,5 @@
+import Listas
+
 class Tramites:
     def __init__(self, categoria : str, tipo : str):
         self.Categorias = categoria
@@ -9,7 +11,8 @@ class Tramites:
 
     @Categorias.setter
     def Categorias(self, Categorias):
-        self.__categorias = Categorias
+        if Categorias in Listas.LCategoria().Extraer():
+            self.__categorias = Categorias
 
     @property
     def Tipos(self):
