@@ -11,6 +11,16 @@ class Validacion:
             except:
                 print(error)
 
+    def SiNo(self, texto : str):
+        while True:
+            val = input(texto)
+            if val.lower() == "si":
+                return True
+            elif val.lower() == "no":
+                return False
+            else:
+                print("Valor incorrecto!")
+
 
     def Dpi(self):
         while True:
@@ -22,7 +32,7 @@ class Validacion:
 
 
     def Nombre(self):
-        caractersValidos = r"^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)+ $"
+        caractersValidos = r"^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)+$"
         while True:
             nombre = input("Ingrese sus nombres:")
             val1 = not re.fullmatch(caractersValidos, nombre)
@@ -32,9 +42,11 @@ class Validacion:
                 return nombre
 
     def Apellido(self):
+        caractersValidos = r"^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)+$"
         while True:
             apellido = input("Ingrese su apellidos:")
-            if(apellido.startswith(" ") or len(apellido) < 7 or not apellido.replace(" ", "").isalpha()):
+            val1 = not re.fullmatch(caractersValidos, apellido)
+            if apellido.startswith(" ") or val1 or len(apellido) < 7:
                 print("Apellidos no validos!")
             else:
                 return apellido
@@ -70,5 +82,5 @@ class Validacion:
                 print("Genero no valido!")
 
 # Categoria, Tipo, Discapacidad,TipoVehiculo, Idioma, Naconalidad
-x = Validacion()
-a = x.Nombre()
+#x = Validacion()
+#a = x.Apellido()
