@@ -158,7 +158,7 @@ while True:
                 while True:
                     print("\n====================================================================================")
                     menu.principalEmpleado()
-                    submenu = validacion.ValInt("Elija una opcion", "Opcion no existente")
+                    submenu = validacion.ValInt("Elija una opcion:", "Opcion no existente")
                     match submenu:
                         case 1:
                             print("\n====================================================================================")

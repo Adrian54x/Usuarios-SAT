@@ -1,5 +1,6 @@
 class Menus:
         def principal(self):
+            print("=== Gestion de Usuarios SAT ===")
             print("1. Recepcion")
             print("2. Empleados")
             print("0. Salir")
