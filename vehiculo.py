@@ -34,12 +34,3 @@ class Vehiculos(Usuarios, Tramites):
 
     def Mostrar(self):
         print("No. de dpi: ", self.Dpi)
-        print("Nombres: ", self.Nombres)
-        print("Apellidos: ", self.Apellidos)
-        print("Fecha de nacimiento: ", self.FechaDeNacimiento)
-        print("Genero: ", self.Genero)
-        print("Categoria:",self.Categorias)
-        print("Tipo:", self.Tipos)
-        print("La informacion del vehiculo es la siguiente:_ ")
-        print("Categoria del vehiculo:_ ",self.Categorias)
-        print("Tipo de vehiculo:_ ",self.TiposV)

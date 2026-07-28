@@ -24,7 +24,7 @@ class Cola:
             print("La cola está vacía.")
             return
         for n, c in enumerate(self.__cola, start=1):
-            print(f"--- Posición {n} ---")
+            print(f"{n}.")
             c.Mostrar()
 
     def buscar(self, dpi):
